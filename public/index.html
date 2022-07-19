@@ -8,7 +8,126 @@
 
         <link rel="stylesheet" href="styles/style.css" />
     </head>
+
     <body>
+        <section class="options">
+            <h1 id="balance">Total balance 1200$</h1>
+
+            <section class="form__container">
+                <form class="form">
+                    <h2 class="form__title">Income</h2>
+
+                    <div class="form__informations">
+                        <input
+                            type="text"
+                            name="title"
+                            id="form__title-of-transation"
+                            class="form__input"
+                            placeholder="Title of transaction"
+                        />
+
+                        <input
+                            type="number"
+                            name="amount"
+                            id="form__amount"
+                            class="form__input"
+                            placeholder="Enter amount"
+                        />
+
+                        <input
+                            type="text"
+                            name="category"
+                            id="form__category"
+                            class="form__input"
+                            list="categories"
+                            placeholder="Category"
+                        />
+
+                        <datalist id="categories">
+                            <option value="Food"></option>
+                            <option value="Eduation"></option>
+                            <option value="House"></option>
+                            <option value="Transport"></option>
+                            <option value="Entertainment"></option>
+                            <option value="Other"></option>
+                        </datalist>
+
+                        <input
+                            type="text"
+                            name="source"
+                            id="form__source"
+                            class="form__input"
+                            list="sources"
+                            placeholder="Source"
+                        />
+
+                        <datalist id="sources">
+                            <option value="Cash"></option>
+                            <option value="Card"></option>
+                        </datalist>
+                    </div>
+
+                    <button id="income_button" class="add-button">ADD</button>
+                </form>
+
+                <form class="form">
+                    <h2 class="form__title">Expense</h2>
+
+                    <div class="form__informations">
+                        <input
+                            type="text"
+                            name="title"
+                            id="form__title-of-transation"
+                            class="form__input"
+                            placeholder="Title of transaction"
+                        />
+
+                        <input
+                            type="number"
+                            name="amount"
+                            id="form__amount"
+                            class="form__input"
+                            placeholder="Enter amount"
+                        />
+
+                        <input
+                            type="text"
+                            name="category"
+                            id="form__category"
+                            class="form__input"
+                            list="categories"
+                            placeholder="Category"
+                        />
+
+                        <datalist id="categories">
+                            <option value="Food"></option>
+                            <option value="Eduation"></option>
+                            <option value="House"></option>
+                            <option value="Transport"></option>
+                            <option value="Entertainment"></option>
+                            <option value="Other"></option>
+                        </datalist>
+
+                        <input
+                            type="text"
+                            name="source"
+                            id="form__source"
+                            class="form__input"
+                            list="sources"
+                            placeholder="Source"
+                        />
+
+                        <datalist id="sources">
+                            <option value="Cash"></option>
+                            <option value="Card"></option>
+                        </datalist>
+                    </div>
+
+                    <button id="expense_button" class="add-button">ADD</button>
+                </form>
+            </section>
+        </section>
+
         <script src="app.js"></script>
     </body>
 </html>
