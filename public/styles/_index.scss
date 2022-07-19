@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lato:wght@300;400;700&display=swap');
+
+// Fonts
+$Inter: 'Inter', sans-serif;
+$Lato: 'Lato', sans-serif;
+
+// Colors
+$white: #ffffff;
+$gray: #545454;
+
+// Gradients
+$blueGradient: linear-gradient(180deg, #84c4d8 0%, #4b7380 100%);
+
+//RWD 450px, 800px, 1200px, 1400px
+$breakpoints: (
+    'sm': '28.125rem',
+    'md': '50rem',
+    'lg': '75rem',
+    'xl': '87.5rem',
+);
+
+@mixin breakpointMax($screen-size) {
+    @media (max-width: map-get($breakpoints, $screen-size)) {
+        @content;
+    }
+}
