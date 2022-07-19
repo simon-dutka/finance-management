@@ -11,7 +11,7 @@
 
     <body>
         <section class="options">
-            <h1 id="balance">Total balance 1200$</h1>
+            <h1 id="balance"></h1>
 
             <section class="form__container">
                 <form class="form">
@@ -24,6 +24,7 @@
                             id="form__title-of-transation"
                             class="form__input"
                             placeholder="Title of transaction"
+                            required
                         />
 
                         <input
@@ -32,6 +33,7 @@
                             id="form__amount"
                             class="form__input"
                             placeholder="Enter amount"
+                            required
                         />
 
                         <input
@@ -41,6 +43,7 @@
                             class="form__input"
                             list="categories"
                             placeholder="Category"
+                            required
                         />
 
                         <datalist id="categories">
@@ -59,6 +62,7 @@
                             class="form__input"
                             list="sources"
                             placeholder="Source"
+                            required
                         />
 
                         <datalist id="sources">
@@ -80,6 +84,7 @@
                             id="form__title-of-transation"
                             class="form__input"
                             placeholder="Title of transaction"
+                            required
                         />
 
                         <input
@@ -88,6 +93,7 @@
                             id="form__amount"
                             class="form__input"
                             placeholder="Enter amount"
+                            required
                         />
 
                         <input
@@ -97,6 +103,7 @@
                             class="form__input"
                             list="categories"
                             placeholder="Category"
+                            required
                         />
 
                         <datalist id="categories">
@@ -115,6 +122,7 @@
                             class="form__input"
                             list="sources"
                             placeholder="Source"
+                            required
                         />
 
                         <datalist id="sources">
@@ -126,6 +134,16 @@
                     <button id="expense_button" class="add-button">ADD</button>
                 </form>
             </section>
+        </section>
+
+        <section id="history" class="history">
+            <div class="history__menu">
+                <h3>History</h3>
+                <p class="history__category history__category--income">
+                    Income
+                </p>
+                <p class="history__category">Expense</p>
+            </div>
         </section>
 
         <script src="app.js"></script>

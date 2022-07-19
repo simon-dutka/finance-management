@@ -63,4 +63,8 @@
     border-radius: 6px;
     padding: 0.9rem 2.7rem;
     margin: 2.5rem 0;
+
+    &:hover {
+        cursor: pointer;
+    }
 }

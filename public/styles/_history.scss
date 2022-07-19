@@ -1,0 +1,32 @@
+.history {
+    margin: 0 0 5% 10%;
+
+    &__menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__category {
+        color: $grayDark;
+        font-size: 1.05rem;
+        font-weight: 600;
+
+        &--income {
+            margin-right: 1.5rem;
+        }
+    }
+}
+
+.transaction {
+    &__container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    &__element {
+        margin-right: 2rem;
+    }
+}
