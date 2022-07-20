@@ -1,16 +1,16 @@
 const incomeForm = () => {
     const balanceElement: HTMLHeadingElement =
         document.querySelector('#balance');
-    const formTitleOfTransation: HTMLInputElement = document.querySelector(
-        '#form__title-of-transation'
+    const incomeTitleOfTransation: HTMLInputElement = document.querySelector(
+        '#income__title-of-transation'
     );
 
-    const formAmount: HTMLInputElement =
-        document.querySelector('#form__amount');
-    const formCategory: HTMLInputElement =
-        document.querySelector('#form__category');
-    const formSource: HTMLInputElement =
-        document.querySelector('#form__source');
+    const incomeAmount: HTMLInputElement =
+        document.querySelector('#income__amount');
+    const incomeCategory: HTMLInputElement =
+        document.querySelector('#income__category');
+    const incomeSource: HTMLInputElement =
+        document.querySelector('#income__source');
     const incomeBtn = document.querySelector('#income_button');
     const historyContainer = document.querySelector('#history');
 
@@ -41,16 +41,16 @@ const incomeForm = () => {
 
         // Income inputs elements
         let incomeInputs = [
-            formTitleOfTransation,
-            formAmount,
-            formCategory,
-            formSource,
+            incomeTitleOfTransation,
+            incomeAmount,
+            incomeCategory,
+            incomeSource,
         ];
 
-        let title = formTitleOfTransation.value,
-            amount = `${formAmount.value} $`,
-            category = formCategory.value,
-            source = formSource.value;
+        let title = incomeTitleOfTransation.value,
+            amount = `${incomeAmount.value} $`,
+            category = incomeCategory.value,
+            source = incomeSource.value;
 
         const incomeInputsValues = [title, amount, category, source];
 

@@ -1,9 +1,9 @@
 const incomeForm = () => {
     const balanceElement = document.querySelector('#balance');
-    const formTitleOfTransation = document.querySelector('#form__title-of-transation');
-    const formAmount = document.querySelector('#form__amount');
-    const formCategory = document.querySelector('#form__category');
-    const formSource = document.querySelector('#form__source');
+    const incomeTitleOfTransation = document.querySelector('#income__title-of-transation');
+    const incomeAmount = document.querySelector('#income__amount');
+    const incomeCategory = document.querySelector('#income__category');
+    const incomeSource = document.querySelector('#income__source');
     const incomeBtn = document.querySelector('#income_button');
     const historyContainer = document.querySelector('#history');
     // Start user balance
@@ -23,12 +23,12 @@ const incomeForm = () => {
         transactionHtmlContainerElement.classList.add('transaction__container');
         // Income inputs elements
         let incomeInputs = [
-            formTitleOfTransation,
-            formAmount,
-            formCategory,
-            formSource,
+            incomeTitleOfTransation,
+            incomeAmount,
+            incomeCategory,
+            incomeSource,
         ];
-        let title = formTitleOfTransation.value, amount = `${formAmount.value} $`, category = formCategory.value, source = formSource.value;
+        let title = incomeTitleOfTransation.value, amount = `${incomeAmount.value} $`, category = incomeCategory.value, source = incomeSource.value;
         const incomeInputsValues = [title, amount, category, source];
         incomeElementsContainer.forEach((element, i) => {
             // Create elements to history transaction
