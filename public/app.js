@@ -1,7 +1,5 @@
 const balanceElement = document.querySelector('#balance');
-const formTitleOfTransation = document.querySelector(
-    '#form__title-of-transation'
-);
+const formTitleOfTransation = document.querySelector('#form__title-of-transation');
 const formAmount = document.querySelector('#form__amount');
 const formCategory = document.querySelector('#form__category');
 const formSource = document.querySelector('#form__source');
@@ -18,11 +16,7 @@ incomeBtn.addEventListener('click', (event) => {
     event.preventDefault();
     let balance = Number(balanceElementValue);
     // History transaction elements
-    let transactionHtmlContainerElement,
-        titleHtmlElement,
-        amounteHtmlElement,
-        categoryHtmlElement,
-        sourceHtmlElement;
+    let transactionHtmlContainerElement, titleHtmlElement, amounteHtmlElement, categoryHtmlElement, sourceHtmlElement;
     const incomeElementsContainer = [
         titleHtmlElement,
         amounteHtmlElement,
@@ -39,10 +33,7 @@ incomeBtn.addEventListener('click', (event) => {
         formSource,
     ];
     //TODO: add foreach for this let
-    let title = formTitleOfTransation.value,
-        amount = `${formAmount.value} $`,
-        category = formCategory.value,
-        source = formSource.value;
+    let title = formTitleOfTransation.value, amount = `${formAmount.value} $`, category = formCategory.value, source = formSource.value;
     const incomeInputsValues = [title, amount, category, source];
     incomeElementsContainer.forEach((element, i) => {
         // Create elements to history transaction
@@ -59,10 +50,9 @@ incomeBtn.addEventListener('click', (event) => {
     // Update balance function
     const updateBalance = () => {
         amount = amount.replace(/ \$/g, '');
-        let newBalance = balance - Number(amount);
+        let newBalance = balance + Number(amount);
         balanceElementValue = newBalance.toString();
         balanceElement.innerHTML = `Total balance ${balanceElementValue} $`;
-        console.log(balanceElementValue);
     };
     updateBalance();
 });

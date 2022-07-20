@@ -76,10 +76,9 @@ incomeBtn.addEventListener('click', (event: Event) => {
     // Update balance function
     const updateBalance = () => {
         amount = amount.replace(/ \$/g, '');
-        let newBalance = balance - Number(amount);
+        let newBalance = balance + Number(amount);
         balanceElementValue = newBalance.toString();
         balanceElement.innerHTML = `Total balance ${balanceElementValue} $`;
-        console.log(balanceElementValue);
     };
 
     updateBalance();
