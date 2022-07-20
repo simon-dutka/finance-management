@@ -4,12 +4,12 @@ const incomeForm = () => {
     const incomeAmount = document.querySelector('#income__amount');
     const incomeCategory = document.querySelector('#income__category');
     const incomeSource = document.querySelector('#income__source');
-    const incomeBtn = document.querySelector('#income_button');
+    const incomeBtn = document.querySelector('#income__button');
     const historyContainer = document.querySelector('#history');
-    // Start user balance
-    let balanceElementValue = balanceElement.dataset.value;
     incomeBtn.addEventListener('click', (event) => {
         event.preventDefault();
+        // Start user balance
+        let balanceElementValue = balanceElement.dataset.value;
         let balance = Number(balanceElementValue);
         // History transaction elements
         let transactionHtmlContainerElement, titleHtmlElement, amounteHtmlElement, categoryHtmlElement, sourceHtmlElement;
@@ -48,6 +48,7 @@ const incomeForm = () => {
             let newBalance = balance + Number(amount);
             balanceElementValue = newBalance.toString();
             balanceElement.innerHTML = `Total balance ${balanceElementValue} $`;
+            balanceElement.setAttribute('data-value', `${balanceElementValue}`);
         };
         updateBalance();
     });

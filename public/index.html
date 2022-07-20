@@ -11,7 +11,7 @@
 
     <body>
         <section class="options">
-            <h1 id="balance" data-value="0"></h1>
+            <h1 id="balance" data-value="10"></h1>
 
             <section class="form__container">
                 <form class="form">
@@ -73,7 +73,7 @@
                         </datalist>
                     </div>
 
-                    <button id="income_button" class="add-button">ADD</button>
+                    <button id="income__button" class="add-button">ADD</button>
                 </form>
 
                 <form class="form">
@@ -105,6 +105,7 @@
                             class="form__input"
                             list="categories"
                             placeholder="Category"
+                            onkeypress="return false"
                             required
                         />
 
@@ -124,6 +125,7 @@
                             class="form__input"
                             list="sources"
                             placeholder="Source"
+                            onkeypress="return false"
                             required
                         />
 
@@ -133,7 +135,7 @@
                         </datalist>
                     </div>
 
-                    <button id="expense_button" class="add-button">ADD</button>
+                    <button id="expense__button" class="add-button">ADD</button>
                 </form>
             </section>
         </section>
