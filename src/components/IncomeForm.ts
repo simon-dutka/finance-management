@@ -11,10 +11,10 @@ const incomeForm = () => {
         document.querySelector('#income__category');
     const incomeSource: HTMLInputElement =
         document.querySelector('#income__source');
-    const incomeBtn = document.querySelector('#income__button');
-    const historyContainer = document.querySelector('#history');
+    const incomeAddBtn = document.querySelector('#income__add-button');
+    const historyContainer = document.querySelector('#history__container');
 
-    incomeBtn.addEventListener('click', (event: Event) => {
+    incomeAddBtn.addEventListener('click', (event: Event) => {
         event.preventDefault();
 
         // Start user balance
@@ -37,7 +37,10 @@ const incomeForm = () => {
         ];
 
         transactionHtmlContainerElement = document.createElement('div');
-        transactionHtmlContainerElement.classList.add('transaction__container');
+        transactionHtmlContainerElement.classList.add(
+            'transaction__container',
+            'transaction__container--income'
+        );
 
         // Income inputs elements
         let incomeInputs = [
@@ -62,12 +65,17 @@ const incomeForm = () => {
             transactionHtmlContainerElement.appendChild(element);
         });
 
+        transactionHtmlContainerElement.setAttribute(
+            'data-transaction-type',
+            'income'
+        );
+
+        historyContainer.appendChild(transactionHtmlContainerElement);
+
         // Clear income inputs
         incomeInputs.forEach((input) => {
             input.value = '';
         });
-
-        historyContainer.appendChild(transactionHtmlContainerElement);
 
         // Update balance function
         const updateBalance = () => {

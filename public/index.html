@@ -11,7 +11,7 @@
 
     <body>
         <section class="options">
-            <h1 id="balance" data-value="10"></h1>
+            <h1 id="balance" data-value="0"></h1>
 
             <section class="form__container">
                 <form class="form">
@@ -73,7 +73,9 @@
                         </datalist>
                     </div>
 
-                    <button id="income__button" class="add-button">ADD</button>
+                    <button id="income__add-button" class="add-button">
+                        ADD
+                    </button>
                 </form>
 
                 <form class="form">
@@ -135,7 +137,9 @@
                         </datalist>
                     </div>
 
-                    <button id="expense__button" class="add-button">ADD</button>
+                    <button id="expense__add-button" class="add-button">
+                        ADD
+                    </button>
                 </form>
             </section>
         </section>
@@ -143,11 +147,24 @@
         <section id="history" class="history">
             <div class="history__menu">
                 <h3>History</h3>
-                <p class="history__category history__category--income">
+                <p
+                    id="history__all-btn"
+                    class="history__category history__category--all"
+                >
+                    All
+                </p>
+
+                <p
+                    id="history__income-btn"
+                    class="history__category history__category--income"
+                >
                     Income
                 </p>
-                <p class="history__category">Expense</p>
+                <p id="history__expense-btn" class="history__category">
+                    Expense
+                </p>
             </div>
+            <div id="history__container" data-type="income"></div>
         </section>
 
         <script type="module" src="../dist/app.js"></script>

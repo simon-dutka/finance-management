@@ -70,9 +70,10 @@ h3 {
   color: #333333;
   font-size: 1.05rem;
   font-weight: 600;
+  cursor: pointer;
 }
 
-.history__category--income {
+.history__category--all, .history__category--income {
   margin-right: 1.5rem;
 }
 
