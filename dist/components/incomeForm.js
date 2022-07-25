@@ -9,7 +9,7 @@ const incomeForm = () => {
     incomeAddBtn.addEventListener('click', (event) => {
         event.preventDefault();
         // Start user balance
-        let balanceElementValue = balanceElement.dataset.value;
+        let balanceElementValue = localStorage.getItem('balance');
         let balance = Number(balanceElementValue);
         // History transaction elements
         let transactionHtmlContainerElement, titleHtmlElement, amounteHtmlElement, categoryHtmlElement, sourceHtmlElement;
@@ -50,6 +50,7 @@ const incomeForm = () => {
             balanceElementValue = newBalance.toString();
             balanceElement.innerHTML = `Total balance ${balanceElementValue} $`;
             balanceElement.setAttribute('data-value', `${balanceElementValue}`);
+            localStorage.setItem('balance', balanceElementValue);
         };
         updateBalance();
     });

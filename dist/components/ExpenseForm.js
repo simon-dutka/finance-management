@@ -8,7 +8,8 @@ const expenseForm = () => {
     const historyContainer = document.querySelector('#history__container');
     expenseBtn.addEventListener('click', (event) => {
         event.preventDefault();
-        let balanceElementValue = balanceElement.dataset.value;
+        // Start user balance
+        let balanceElementValue = localStorage.getItem('balance');
         let balance = Number(balanceElementValue);
         // History transaction elements
         let transactionHtmlContainerElement, titleHtmlElement, amounteHtmlElement, categoryHtmlElement, sourceHtmlElement;
@@ -49,6 +50,7 @@ const expenseForm = () => {
             balanceElementValue = newBalance.toString();
             balanceElement.innerHTML = `Total balance ${balanceElementValue} $`;
             balanceElement.setAttribute('data-value', `${balanceElementValue}`);
+            localStorage.setItem('balance', balanceElementValue);
         };
         updateBalance();
     });

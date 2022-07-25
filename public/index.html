@@ -11,7 +11,7 @@
 
     <body>
         <section class="options">
-            <h1 id="balance" data-value="0"></h1>
+            <h1 id="balance"></h1>
 
             <section class="form__container">
                 <form class="form">
@@ -41,13 +41,13 @@
                             name="category"
                             id="income__category"
                             class="form__input"
-                            list="categories"
+                            list="income-categories"
                             placeholder="Category"
                             onkeypress="return false"
                             required
                         />
 
-                        <datalist id="categories">
+                        <datalist id="income-categories">
                             <option value="Food"></option>
                             <option value="Eduation"></option>
                             <option value="House"></option>
@@ -105,13 +105,13 @@
                             name="category"
                             id="expense__category"
                             class="form__input"
-                            list="categories"
+                            list="expense-categories"
                             placeholder="Category"
                             onkeypress="return false"
                             required
                         />
 
-                        <datalist id="categories">
+                        <datalist id="expense-categories">
                             <option value="Salary"></option>
                             <option value="Cash"></option>
                             <option value="Other"></option>

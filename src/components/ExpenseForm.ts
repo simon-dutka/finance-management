@@ -16,7 +16,8 @@ const expenseForm = () => {
     expenseBtn.addEventListener('click', (event: Event) => {
         event.preventDefault();
 
-        let balanceElementValue = balanceElement.dataset.value;
+        // Start user balance
+        let balanceElementValue = localStorage.getItem('balance');
 
         let balance: number = Number(balanceElementValue);
 
@@ -83,6 +84,7 @@ const expenseForm = () => {
             balanceElement.innerHTML = `Total balance ${balanceElementValue} $`;
 
             balanceElement.setAttribute('data-value', `${balanceElementValue}`);
+            localStorage.setItem('balance', balanceElementValue);
         };
 
         updateBalance();
