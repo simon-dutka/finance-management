@@ -14,6 +14,12 @@ const incomeForm = () => {
     const incomeAddBtn = document.querySelector('#income__add-button');
     const historyContainer = document.querySelector('#history__container');
 
+    // All storage income transactions in localStorage
+    let createdIncomeTransactions = [];
+
+    // Render created icome transactions
+    historyContainer.innerHTML = localStorage.getItem('incomeTransactions');
+
     incomeAddBtn.addEventListener('click', (event: Event) => {
         event.preventDefault();
 
@@ -72,10 +78,32 @@ const incomeForm = () => {
 
         historyContainer.appendChild(transactionHtmlContainerElement);
 
-        // Clear income inputs
+        createdIncomeTransactions.push(transactionHtmlContainerElement);
+
         incomeInputs.forEach((input) => {
             input.value = '';
         });
+
+        function saveLocalStorage() {
+            let createdIncomeTransactionsHtml = '';
+
+            localStorage.getItem('incomeTransactions') === null
+                ? (createdIncomeTransactionsHtml = '')
+                : (createdIncomeTransactionsHtml =
+                      localStorage.getItem('incomeTransactions'));
+
+            for (let i = 0; i < createdIncomeTransactions.length; i++) {
+                let childIncome = createdIncomeTransactions[i].outerHTML;
+                createdIncomeTransactionsHtml += childIncome;
+            }
+
+            localStorage.setItem(
+                'incomeTransactions',
+                createdIncomeTransactionsHtml
+            );
+        }
+
+        saveLocalStorage();
 
         // Update balance function
         const updateBalance = () => {
