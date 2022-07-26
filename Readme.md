@@ -4,8 +4,6 @@ If you want to effectively manage your finance this application is for you. This
 
 ## Installation
 
-#
-
 Clone the application
 
 ```bash
@@ -28,14 +26,10 @@ Open with local server
 
 ## Features
 
-#
-
 -   Adding informations about income
 -   Adding informations about expense
 -   History filters
 
 ## License
-
-#
 
 [MIT](https://choosealicense.com/licenses/mit/)
