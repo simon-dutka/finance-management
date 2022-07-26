@@ -4,9 +4,11 @@ const expenseForm = () => {
     const expenseAmount = document.querySelector('#expense__amount');
     const expenseCategory = document.querySelector('#expense__category');
     const expenseSource = document.querySelector('#expense__source');
-    const expenseBtn = document.querySelector('#expense__add-button');
+    const expenseAddBtn = document.querySelector('#expense__add-button');
     const historyContainer = document.querySelector('#history__container');
-    expenseBtn.addEventListener('click', (event) => {
+    // All storage expense transactions in localStorage
+    let createdExpenseTransactions = [];
+    expenseAddBtn.addEventListener('click', (event) => {
         event.preventDefault();
         // Start user balance
         let balanceElementValue = localStorage.getItem('balance');
@@ -39,6 +41,19 @@ const expenseForm = () => {
         });
         transactionHtmlContainerElement.setAttribute('data-transaction-type', 'expense');
         historyContainer.appendChild(transactionHtmlContainerElement);
+        createdExpenseTransactions.push(transactionHtmlContainerElement);
+        function saveLocalStorage() {
+            let createdExpenseTransactionsHtml = '';
+            localStorage.getItem('expenseTransactions') === null
+                ? (createdExpenseTransactionsHtml = '')
+                : (createdExpenseTransactionsHtml = localStorage.getItem('expenseTransactions'));
+            for (let i = 0; i < createdExpenseTransactions.length; i++) {
+                let childExpense = createdExpenseTransactions[i].outerHTML;
+                createdExpenseTransactionsHtml += childExpense;
+            }
+            localStorage.setItem('expenseTransactions', createdExpenseTransactionsHtml);
+        }
+        saveLocalStorage();
         // Clear expense inputs
         expenseInputs.forEach((input) => {
             input.value = '';

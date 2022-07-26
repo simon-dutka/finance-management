@@ -17,9 +17,6 @@ const incomeForm = () => {
     // All storage income transactions in localStorage
     let createdIncomeTransactions = [];
 
-    // Render created icome transactions
-    historyContainer.innerHTML = localStorage.getItem('incomeTransactions');
-
     incomeAddBtn.addEventListener('click', (event: Event) => {
         event.preventDefault();
 
@@ -80,10 +77,6 @@ const incomeForm = () => {
 
         createdIncomeTransactions.push(transactionHtmlContainerElement);
 
-        incomeInputs.forEach((input) => {
-            input.value = '';
-        });
-
         function saveLocalStorage() {
             let createdIncomeTransactionsHtml = '';
 
@@ -104,6 +97,10 @@ const incomeForm = () => {
         }
 
         saveLocalStorage();
+
+        incomeInputs.forEach((input) => {
+            input.value = '';
+        });
 
         // Update balance function
         const updateBalance = () => {

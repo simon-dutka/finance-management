@@ -8,8 +8,6 @@ const incomeForm = () => {
     const historyContainer = document.querySelector('#history__container');
     // All storage income transactions in localStorage
     let createdIncomeTransactions = [];
-    // Render created icome transactions
-    historyContainer.innerHTML = localStorage.getItem('incomeTransactions');
     incomeAddBtn.addEventListener('click', (event) => {
         event.preventDefault();
         // Start user balance
@@ -44,9 +42,6 @@ const incomeForm = () => {
         transactionHtmlContainerElement.setAttribute('data-transaction-type', 'income');
         historyContainer.appendChild(transactionHtmlContainerElement);
         createdIncomeTransactions.push(transactionHtmlContainerElement);
-        incomeInputs.forEach((input) => {
-            input.value = '';
-        });
         function saveLocalStorage() {
             let createdIncomeTransactionsHtml = '';
             localStorage.getItem('incomeTransactions') === null
@@ -60,6 +55,9 @@ const incomeForm = () => {
             localStorage.setItem('incomeTransactions', createdIncomeTransactionsHtml);
         }
         saveLocalStorage();
+        incomeInputs.forEach((input) => {
+            input.value = '';
+        });
         // Update balance function
         const updateBalance = () => {
             amount = amount.replace(/ \$/g, '');
