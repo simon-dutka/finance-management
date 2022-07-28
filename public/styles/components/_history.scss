@@ -12,11 +12,9 @@
         font-size: 1.05rem;
         font-weight: 600;
         cursor: pointer;
+        background: none;
 
-        &--all,
-        &--income {
-            margin-right: 1.5rem;
-        }
+        margin-right: 1.5rem;
     }
 }
 

@@ -71,9 +71,7 @@ h3 {
   font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
-}
-
-.history__category--all, .history__category--income {
+  background: none;
   margin-right: 1.5rem;
 }
 

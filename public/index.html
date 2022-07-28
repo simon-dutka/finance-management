@@ -144,22 +144,33 @@
         <section id="history" class="history">
             <div class="history__menu">
                 <h3>History</h3>
-                <p
+                <!-- <p
                     id="history__all-btn"
                     class="history__category history__category--all"
                 >
                     All
-                </p>
+                </p> -->
+                <button
+                    id="history__all-btn"
+                    class="history__category history__category--all"
+                >
+                    All
+                </button>
 
-                <p
+                <button
                     id="history__income-btn"
                     class="history__category history__category--income"
                 >
                     Income
-                </p>
-                <p id="history__expense-btn" class="history__category">
+                </button>
+
+                <button id="history__expense-btn" class="history__category">
                     Expense
-                </p>
+                </button>
+
+                <button id="history__low-to-high-btn" class="history__category">
+                    Low to high
+                </button>
             </div>
             <div id="history__container" data-type="income"></div>
         </section>

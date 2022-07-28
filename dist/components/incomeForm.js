@@ -14,12 +14,13 @@ const incomeForm = () => {
         let balanceElementValue = localStorage.getItem('balance');
         let balance = Number(balanceElementValue);
         // History transaction elements
-        let transactionHtmlContainerElement, titleHtmlElement, amounteHtmlElement, categoryHtmlElement, sourceHtmlElement;
+        let transactionHtmlContainerElement, titleHtmlElement, amounteHtmlElement, categoryHtmlElement, sourceHtmlElement, dateElement;
         const incomeElementsContainer = [
             titleHtmlElement,
             amounteHtmlElement,
             categoryHtmlElement,
             sourceHtmlElement,
+            dateElement,
         ];
         transactionHtmlContainerElement = document.createElement('div');
         transactionHtmlContainerElement.classList.add('transaction__container', 'transaction__container--income');
@@ -30,8 +31,15 @@ const incomeForm = () => {
             incomeCategory,
             incomeSource,
         ];
-        let title = incomeTitleOfTransation.value, amount = `${incomeAmount.value} $`, category = incomeCategory.value, source = incomeSource.value;
-        const incomeInputsValues = [title, amount, category, source];
+        // Get current date
+        let currentDate = new Date(), currentHours = `${currentDate.getHours()}`, currentMinutes = `${currentDate.getMinutes()}`, currentMonth = `${currentDate.getMonth() + 1}`, currentDay = `${currentDate.getUTCDate() + 1}`, currentYear = `${currentDate.getFullYear()}`;
+        // Add 0 brefore hours and minutes < 10
+        if (Number(currentHours) < 10)
+            currentHours = `0${currentHours}`;
+        if (Number(currentMinutes) < 10)
+            currentMinutes = `0${currentMinutes}`;
+        let title = incomeTitleOfTransation.value, amount = `${incomeAmount.value} $`, category = incomeCategory.value, source = incomeSource.value, date = `${currentHours}:${currentMinutes} ${currentMonth}/${currentDay}/${currentYear}`;
+        const incomeInputsValues = [title, amount, category, source, date];
         incomeElementsContainer.forEach((element, i) => {
             // Create elements to history transaction
             element = document.createElement('p');

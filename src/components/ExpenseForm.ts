@@ -29,13 +29,15 @@ const expenseForm = () => {
             titleHtmlElement: HTMLElement,
             amounteHtmlElement: HTMLElement,
             categoryHtmlElement: HTMLElement,
-            sourceHtmlElement: HTMLElement;
+            sourceHtmlElement: HTMLElement,
+            dateElement: Date;
 
         const expenseElementsContainer = [
             titleHtmlElement,
             amounteHtmlElement,
             categoryHtmlElement,
             sourceHtmlElement,
+            dateElement,
         ];
 
         transactionHtmlContainerElement = document.createElement('div');
@@ -44,7 +46,7 @@ const expenseForm = () => {
             'transaction__container--expense'
         );
 
-        // expense inputs elements
+        // Expense inputs elements
         let expenseInputs = [
             expenseTitleOfTransation,
             expenseAmount,
@@ -52,12 +54,25 @@ const expenseForm = () => {
             expenseSource,
         ];
 
+        // Get current date
+        let currentDate = new Date(),
+            currentHours = `${currentDate.getHours()}`,
+            currentMinutes = `${currentDate.getMinutes()}`,
+            currentMonth = `${currentDate.getMonth() + 1}`,
+            currentDay = `${currentDate.getUTCDate() + 1}`,
+            currentYear = `${currentDate.getFullYear()}`;
+
+        // Add 0 brefore hours and minutes < 10
+        if (Number(currentHours) < 10) currentHours = `0${currentHours}`;
+        if (Number(currentMinutes) < 10) currentMinutes = `0${currentMinutes}`;
+
         let title = expenseTitleOfTransation.value,
             amount = `${expenseAmount.value} $`,
             category = expenseCategory.value,
-            source = expenseSource.value;
+            source = expenseSource.value,
+            date = `${currentHours}:${currentMinutes} ${currentMonth}/${currentDay}/${currentYear}`;
 
-        const expenseInputsValues = [title, amount, category, source];
+        const expenseInputsValues = [title, amount, category, source, date];
 
         expenseElementsContainer.forEach((element, i) => {
             // Create elements to history transaction
