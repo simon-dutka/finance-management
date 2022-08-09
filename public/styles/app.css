@@ -31,6 +31,7 @@ h1,
 h2 {
   font-size: 1.875rem;
   font-weight: 600;
+  text-align: center;
   background: -webkit-gradient(linear, left top, left bottom, from(#84c4d8), to(#4b7380));
   background: linear-gradient(180deg, #84c4d8 0%, #4b7380 100%);
   -webkit-background-clip: text;
@@ -187,5 +188,20 @@ h3 {
 
 .add-button:hover {
   cursor: pointer;
+}
+
+.top__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 1fr;
+      grid-template-columns: 3fr 1fr;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-graph__container {
+  width: 70%;
 }
 /*# sourceMappingURL=app.css.map */

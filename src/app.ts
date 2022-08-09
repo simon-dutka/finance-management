@@ -3,9 +3,11 @@ import incomeForm from './components/IncomeForm.js';
 import expenseForm from './components/ExpenseForm.js';
 import renderHistory from './components/History.js';
 import renderCreatedTransactions from './components/Transactions.js';
+import renderGraphs from '../graphs/graphs.js';
 
 renderStartBalance();
 incomeForm();
 expenseForm();
 renderHistory();
 renderCreatedTransactions();
+renderGraphs();
