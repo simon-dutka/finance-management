@@ -6,8 +6,8 @@ import renderCreatedTransactions from './components/Transactions.js';
 import renderGraphs from '../graphs/graphs.js';
 
 renderStartBalance();
+// renderGraphs();
 incomeForm();
 expenseForm();
 renderHistory();
 renderCreatedTransactions();
-renderGraphs();
