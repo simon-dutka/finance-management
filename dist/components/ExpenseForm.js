@@ -47,16 +47,22 @@ const expenseForm = () => {
         });
         transactionHtmlContainerElement.setAttribute('data-transaction-type', 'expense');
         historyContainer.appendChild(transactionHtmlContainerElement);
-        function saveLocalStorage() {
+        const saveLocalStorage = () => {
             let createdExpenseTransactionsHtml = '';
-            localStorage.getItem('incomeTransactions') === null
+            let element = transactionHtmlContainerElement.outerHTML;
+            localStorage.getItem('expenseTransactions') === null
                 ? (createdExpenseTransactionsHtml =
                     transactionHtmlContainerElement.outerHTML)
                 : (createdExpenseTransactionsHtml =
-                    localStorage.getItem('incomeTransactions') +
+                    localStorage.getItem('expenseTransactions') +
                         transactionHtmlContainerElement.outerHTML);
-            localStorage.setItem('incomeTransactions', createdExpenseTransactionsHtml);
-        }
+            localStorage.setItem('expenseTransactions', createdExpenseTransactionsHtml);
+            localStorage.getItem('allTransactions') === null
+                ? (createdExpenseTransactionsHtml = element)
+                : (createdExpenseTransactionsHtml =
+                    localStorage.getItem('allTransactions') + element);
+            localStorage.setItem('allTransactions', createdExpenseTransactionsHtml);
+        };
         saveLocalStorage();
         // Clear expense inputs
         expenseInputs.forEach((input) => {

@@ -47,8 +47,9 @@ const incomeForm = () => {
         });
         transactionHtmlContainerElement.setAttribute('data-transaction-type', 'income');
         historyContainer.appendChild(transactionHtmlContainerElement);
-        function saveLocalStorage() {
+        const saveLocalStorage = () => {
             let createdIncomeTransactionsHtml = '';
+            let element = transactionHtmlContainerElement.outerHTML;
             localStorage.getItem('incomeTransactions') === null
                 ? (createdIncomeTransactionsHtml =
                     transactionHtmlContainerElement.outerHTML)
@@ -56,7 +57,12 @@ const incomeForm = () => {
                     localStorage.getItem('incomeTransactions') +
                         transactionHtmlContainerElement.outerHTML);
             localStorage.setItem('incomeTransactions', createdIncomeTransactionsHtml);
-        }
+            localStorage.getItem('allTransactions') === null
+                ? (createdIncomeTransactionsHtml = element)
+                : (createdIncomeTransactionsHtml =
+                    localStorage.getItem('allTransactions') + element);
+            localStorage.setItem('allTransactions', createdIncomeTransactionsHtml);
+        };
         saveLocalStorage();
         incomeInputs.forEach((input) => {
             input.value = '';

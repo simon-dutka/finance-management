@@ -87,8 +87,9 @@ const incomeForm = () => {
 
         historyContainer.appendChild(transactionHtmlContainerElement);
 
-        function saveLocalStorage() {
+        const saveLocalStorage = () => {
             let createdIncomeTransactionsHtml = '';
+            let element = transactionHtmlContainerElement.outerHTML;
 
             localStorage.getItem('incomeTransactions') === null
                 ? (createdIncomeTransactionsHtml =
@@ -101,7 +102,17 @@ const incomeForm = () => {
                 'incomeTransactions',
                 createdIncomeTransactionsHtml
             );
-        }
+
+            localStorage.getItem('allTransactions') === null
+                ? (createdIncomeTransactionsHtml = element)
+                : (createdIncomeTransactionsHtml =
+                      localStorage.getItem('allTransactions') + element);
+
+            localStorage.setItem(
+                'allTransactions',
+                createdIncomeTransactionsHtml
+            );
+        };
 
         saveLocalStorage();
 
