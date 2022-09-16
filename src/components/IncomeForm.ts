@@ -14,9 +14,6 @@ const incomeForm = () => {
     const incomeAddBtn = document.querySelector('#income__add-button');
     const historyContainer = document.querySelector('#history__container');
 
-    // All storage income transactions in localStorage
-    let createdIncomeTransactions = [];
-
     incomeAddBtn.addEventListener('click', (event: Event) => {
         event.preventDefault();
 
@@ -90,20 +87,15 @@ const incomeForm = () => {
 
         historyContainer.appendChild(transactionHtmlContainerElement);
 
-        createdIncomeTransactions.push(transactionHtmlContainerElement);
-
         function saveLocalStorage() {
             let createdIncomeTransactionsHtml = '';
 
             localStorage.getItem('incomeTransactions') === null
-                ? (createdIncomeTransactionsHtml = '')
+                ? (createdIncomeTransactionsHtml =
+                      transactionHtmlContainerElement.outerHTML)
                 : (createdIncomeTransactionsHtml =
-                      localStorage.getItem('incomeTransactions'));
-
-            for (let i = 0; i < createdIncomeTransactions.length; i++) {
-                let childIncome = createdIncomeTransactions[i].outerHTML;
-                createdIncomeTransactionsHtml += childIncome;
-            }
+                      localStorage.getItem('incomeTransactions') +
+                      transactionHtmlContainerElement.outerHTML);
 
             localStorage.setItem(
                 'incomeTransactions',

@@ -13,9 +13,6 @@ const expenseForm = () => {
     const expenseAddBtn = document.querySelector('#expense__add-button');
     const historyContainer = document.querySelector('#history__container');
 
-    // All storage expense transactions in localStorage
-    let createdExpenseTransactions = [];
-
     expenseAddBtn.addEventListener('click', (event: Event) => {
         event.preventDefault();
 
@@ -89,28 +86,21 @@ const expenseForm = () => {
 
         historyContainer.appendChild(transactionHtmlContainerElement);
 
-        createdExpenseTransactions.push(transactionHtmlContainerElement);
-
         function saveLocalStorage() {
             let createdExpenseTransactionsHtml = '';
 
-            localStorage.getItem('expenseTransactions') === null
-                ? (createdExpenseTransactionsHtml = '')
-                : (createdExpenseTransactionsHtml = localStorage.getItem(
-                      'expenseTransactions'
-                  ));
-
-            for (let i = 0; i < createdExpenseTransactions.length; i++) {
-                let childExpense = createdExpenseTransactions[i].outerHTML;
-                createdExpenseTransactionsHtml += childExpense;
-            }
+            localStorage.getItem('incomeTransactions') === null
+                ? (createdExpenseTransactionsHtml =
+                      transactionHtmlContainerElement.outerHTML)
+                : (createdExpenseTransactionsHtml =
+                      localStorage.getItem('incomeTransactions') +
+                      transactionHtmlContainerElement.outerHTML);
 
             localStorage.setItem(
-                'expenseTransactions',
+                'incomeTransactions',
                 createdExpenseTransactionsHtml
             );
         }
-
         saveLocalStorage();
 
         // Clear expense inputs
