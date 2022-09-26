@@ -1,3 +1,5 @@
+import { saveLocalStorage } from './SaveLocalStorage.js';
+
 const incomeForm = () => {
     const balanceElement: HTMLHeadingElement =
         document.querySelector('#balance');
@@ -86,33 +88,6 @@ const incomeForm = () => {
         );
 
         historyContainer.appendChild(transactionHtmlContainerElement);
-
-        const saveLocalStorage = () => {
-            let createdIncomeTransactionsHtml = '';
-            let element = transactionHtmlContainerElement.outerHTML;
-
-            localStorage.getItem('incomeTransactions') === null
-                ? (createdIncomeTransactionsHtml =
-                      transactionHtmlContainerElement.outerHTML)
-                : (createdIncomeTransactionsHtml =
-                      localStorage.getItem('incomeTransactions') +
-                      transactionHtmlContainerElement.outerHTML);
-
-            localStorage.setItem(
-                'incomeTransactions',
-                createdIncomeTransactionsHtml
-            );
-
-            localStorage.getItem('allTransactions') === null
-                ? (createdIncomeTransactionsHtml = element)
-                : (createdIncomeTransactionsHtml =
-                      localStorage.getItem('allTransactions') + element);
-
-            localStorage.setItem(
-                'allTransactions',
-                createdIncomeTransactionsHtml
-            );
-        };
 
         saveLocalStorage();
 

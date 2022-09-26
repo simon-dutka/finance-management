@@ -1,3 +1,4 @@
+import { saveLocalStorage } from './SaveLocalStorage.js';
 const expenseForm = () => {
     const balanceElement = document.querySelector('#balance');
     const expenseTitleOfTransation = document.querySelector('#expense__title-of-transation');
@@ -47,22 +48,6 @@ const expenseForm = () => {
         });
         transactionHtmlContainerElement.setAttribute('data-transaction-type', 'expense');
         historyContainer.appendChild(transactionHtmlContainerElement);
-        const saveLocalStorage = () => {
-            let createdExpenseTransactionsHtml = '';
-            let element = transactionHtmlContainerElement.outerHTML;
-            localStorage.getItem('expenseTransactions') === null
-                ? (createdExpenseTransactionsHtml =
-                    transactionHtmlContainerElement.outerHTML)
-                : (createdExpenseTransactionsHtml =
-                    localStorage.getItem('expenseTransactions') +
-                        transactionHtmlContainerElement.outerHTML);
-            localStorage.setItem('expenseTransactions', createdExpenseTransactionsHtml);
-            localStorage.getItem('allTransactions') === null
-                ? (createdExpenseTransactionsHtml = element)
-                : (createdExpenseTransactionsHtml =
-                    localStorage.getItem('allTransactions') + element);
-            localStorage.setItem('allTransactions', createdExpenseTransactionsHtml);
-        };
         saveLocalStorage();
         // Clear expense inputs
         expenseInputs.forEach((input) => {
