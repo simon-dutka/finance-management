@@ -16,18 +16,42 @@ const renderHistory = () => {
 
     // Income transactions filter
     historyIncomeBtn.addEventListener('click', () => {
+        let incomeTransactions = '';
+        historyContainer.innerHTML = localStorage.getItem('allTransactions');
+
+        for (let i = 0; i < historyContainer.children.length; i++) {
+            if (
+                historyContainer.children[i].classList.contains(
+                    'transaction__container--income'
+                )
+            ) {
+                incomeTransactions += historyContainer.children[i].outerHTML;
+            }
+        }
+
         // Remove all transactions
         historyContainer.replaceChildren();
-        historyContainer.innerHTML = localStorage.getItem('incomeTransactions');
+        historyContainer.innerHTML = incomeTransactions;
     });
 
     // Expense transactions filter
     historyExpenseBtn.addEventListener('click', () => {
+        let expenseTransactions = '';
+        historyContainer.innerHTML = localStorage.getItem('allTransactions');
+
+        for (let i = 0; i < historyContainer.children.length; i++) {
+            if (
+                historyContainer.children[i].classList.contains(
+                    'transaction__container--expense'
+                )
+            ) {
+                expenseTransactions += historyContainer.children[i].outerHTML;
+            }
+        }
+
         // Remove all transactions
         historyContainer.replaceChildren();
-        historyContainer.innerHTML = localStorage.getItem(
-            'expenseTransactions'
-        );
+        historyContainer.innerHTML = expenseTransactions;
     });
 };
 
