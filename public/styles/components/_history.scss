@@ -24,6 +24,10 @@
         flex-direction: row;
         align-items: center;
         margin-top: 2rem;
+
+        &:last-child {
+            cursor: pointer;
+        }
     }
 
     &__element {

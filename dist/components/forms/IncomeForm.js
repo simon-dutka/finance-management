@@ -1,4 +1,4 @@
-import { saveLocalStorage } from './SaveLocalStorage.js';
+import { saveLocalStorage } from '../SaveLocalStorage.js';
 const incomeForm = () => {
     const balanceElement = document.querySelector('#balance');
     const incomeTitleOfTransation = document.querySelector('#income__title-of-transation');
@@ -67,6 +67,7 @@ const incomeForm = () => {
             localStorage.setItem('balance', balanceElementValue);
         };
         updateBalance();
+        location.reload();
     });
 };
 export default incomeForm;

@@ -1,4 +1,5 @@
-import { saveLocalStorage } from './SaveLocalStorage.js';
+import deleteTransaction from '../history_management/DeleteTransaction.js';
+import { saveLocalStorage } from '../SaveLocalStorage.js';
 
 const incomeForm = () => {
     const balanceElement: HTMLHeadingElement =
@@ -27,16 +28,18 @@ const incomeForm = () => {
         // History transaction elements
         let transactionHtmlContainerElement: HTMLElement,
             titleHtmlElement: HTMLElement,
-            amounteHtmlElement: HTMLElement,
+            amountHtmlElement: HTMLElement,
             categoryHtmlElement: HTMLElement,
             sourceHtmlElement: HTMLElement,
+            deleteHtmlElement: HTMLElement,
             dateElement: Date;
 
         const incomeElementsContainer = [
             titleHtmlElement,
-            amounteHtmlElement,
+            amountHtmlElement,
             categoryHtmlElement,
             sourceHtmlElement,
+            deleteHtmlElement,
             dateElement,
         ];
 
@@ -80,6 +83,11 @@ const incomeForm = () => {
             element.innerHTML = incomeInputsValues[i];
             element.classList.add('transaction__element');
             transactionHtmlContainerElement.appendChild(element);
+
+            if (i === 5) {
+                element.innerHTML = 'delete';
+                element.classList.add('transaction__element--delete');
+            }
         });
 
         transactionHtmlContainerElement.setAttribute(
@@ -107,6 +115,7 @@ const incomeForm = () => {
         };
 
         updateBalance();
+        location.reload();
     });
 };
 

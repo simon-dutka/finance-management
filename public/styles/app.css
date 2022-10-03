@@ -90,6 +90,10 @@ h3 {
   margin-top: 2rem;
 }
 
+.transaction__container:last-child {
+  cursor: pointer;
+}
+
 .transaction__element {
   margin-right: 2rem;
 }
