@@ -13,12 +13,13 @@ const expenseForm = () => {
         let balanceElementValue = localStorage.getItem('balance');
         let balance = Number(balanceElementValue);
         // History transaction elements
-        let transactionHtmlContainerElement, titleHtmlElement, amounteHtmlElement, categoryHtmlElement, sourceHtmlElement, dateElement;
+        let transactionHtmlContainerElement, titleHtmlElement, amounteHtmlElement, categoryHtmlElement, sourceHtmlElement, deleteHtmlElement, dateElement;
         const expenseElementsContainer = [
             titleHtmlElement,
             amounteHtmlElement,
             categoryHtmlElement,
             sourceHtmlElement,
+            deleteHtmlElement,
             dateElement,
         ];
         transactionHtmlContainerElement = document.createElement('div');
@@ -45,6 +46,10 @@ const expenseForm = () => {
             element.innerHTML = expenseInputsValues[i];
             element.classList.add('transaction__element');
             transactionHtmlContainerElement.appendChild(element);
+            if (i === 5) {
+                element.innerHTML = 'delete';
+                element.classList.add('transaction__element--delete');
+            }
         });
         transactionHtmlContainerElement.setAttribute('data-transaction-type', 'expense');
         historyContainer.appendChild(transactionHtmlContainerElement);

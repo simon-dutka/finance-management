@@ -29,6 +29,7 @@ const expenseForm = () => {
             amounteHtmlElement: HTMLElement,
             categoryHtmlElement: HTMLElement,
             sourceHtmlElement: HTMLElement,
+            deleteHtmlElement: HTMLElement,
             dateElement: Date;
 
         const expenseElementsContainer = [
@@ -36,6 +37,7 @@ const expenseForm = () => {
             amounteHtmlElement,
             categoryHtmlElement,
             sourceHtmlElement,
+            deleteHtmlElement,
             dateElement,
         ];
 
@@ -79,6 +81,11 @@ const expenseForm = () => {
             element.innerHTML = expenseInputsValues[i];
             element.classList.add('transaction__element');
             transactionHtmlContainerElement.appendChild(element);
+
+            if (i === 5) {
+                element.innerHTML = 'delete';
+                element.classList.add('transaction__element--delete');
+            }
         });
 
         transactionHtmlContainerElement.setAttribute(

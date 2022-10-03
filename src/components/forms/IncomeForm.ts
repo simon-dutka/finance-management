@@ -1,4 +1,3 @@
-import deleteTransaction from '../history_management/DeleteTransaction.js';
 import { saveLocalStorage } from '../SaveLocalStorage.js';
 
 const incomeForm = () => {

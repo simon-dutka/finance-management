@@ -5,4 +5,3 @@ import renderStartBalance from './components/StartBalance.js';
 renderStartBalance();
 renderForms();
 historyManagement();
-
