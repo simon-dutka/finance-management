@@ -1,3 +1,5 @@
+import updateBalanceExpense from '../balance_management/UpdateBalance.js';
+import updateBalance from '../balance_management/UpdateBalance.js';
 import { saveLocalStorage } from '../SaveLocalStorage.js';
 
 const expenseForm = () => {
@@ -102,18 +104,6 @@ const expenseForm = () => {
             input.value = '';
         });
 
-        // Update balance function
-        const updateBalance = () => {
-            amount = amount.replace(/ \$/g, '');
-            let newBalance = balance - Number(amount);
-            balanceElementValue = newBalance.toString();
-            balanceElement.innerHTML = `Total balance ${balanceElementValue} $`;
-
-            balanceElement.setAttribute('data-value', `${balanceElementValue}`);
-            localStorage.setItem('balance', balanceElementValue);
-        };
-
-        updateBalance();
         location.reload();
     });
 };

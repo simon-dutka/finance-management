@@ -1,8 +1,6 @@
 import { saveLocalStorage } from '../SaveLocalStorage.js';
 
 const incomeForm = () => {
-    const balanceElement: HTMLHeadingElement =
-        document.querySelector('#balance');
     const incomeTitleOfTransation: HTMLInputElement = document.querySelector(
         '#income__title-of-transation'
     );
@@ -98,22 +96,11 @@ const incomeForm = () => {
 
         saveLocalStorage();
 
+        // Clear income inputs
         incomeInputs.forEach((input) => {
             input.value = '';
         });
 
-        // Update balance function
-        const updateBalance = () => {
-            amount = amount.replace(/ \$/g, '');
-            let newBalance = balance + Number(amount);
-            balanceElementValue = newBalance.toString();
-            balanceElement.innerHTML = `Total balance ${balanceElementValue} $`;
-
-            balanceElement.setAttribute('data-value', `${balanceElementValue}`);
-            localStorage.setItem('balance', balanceElementValue);
-        };
-
-        updateBalance();
         location.reload();
     });
 };

@@ -58,16 +58,6 @@ const expenseForm = () => {
         expenseInputs.forEach((input) => {
             input.value = '';
         });
-        // Update balance function
-        const updateBalance = () => {
-            amount = amount.replace(/ \$/g, '');
-            let newBalance = balance - Number(amount);
-            balanceElementValue = newBalance.toString();
-            balanceElement.innerHTML = `Total balance ${balanceElementValue} $`;
-            balanceElement.setAttribute('data-value', `${balanceElementValue}`);
-            localStorage.setItem('balance', balanceElementValue);
-        };
-        updateBalance();
         location.reload();
     });
 };
