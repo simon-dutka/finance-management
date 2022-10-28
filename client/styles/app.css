@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lato:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lato:wght@300;400;700&display=swap");
 * {
   font-size: 100%;
   text-decoration: none;
@@ -24,28 +25,82 @@ body {
   font-size: 16px;
   font-family: "Inter", sans-serif;
   scroll-behavior: smooth;
+  background-color: #383838;
 }
 
-h1,
-h2 {
-  font-size: 1.875rem;
+.navbar__container {
+  background: linear-gradient(162.92deg, #101010 0%, #282525 100%);
+  border-radius: 1.5625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 21.875rem;
+  height: 88vh;
+  margin: 2.5rem 6.25rem 2.5rem 6.25rem;
+}
+
+.navbar__container-items {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar__user-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1.5625rem;
+          column-gap: 1.5625rem;
+  width: 15rem;
+  height: 3.4375rem;
+  border-radius: 0.3125rem;
+  background: #ffffff;
+  margin: 3.75rem auto 0 auto;
+  cursor: pointer;
+}
+
+.navbar__username {
+  color: #1a1818;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.07rem;
+}
+
+.navbar__item {
+  color: #ffffff;
+  font-size: 1.125rem;
   font-weight: 600;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.04em;
   text-align: center;
-  background: -webkit-gradient(linear, left top, left bottom, from(#84c4d8), to(#4b7380));
-  background: linear-gradient(180deg, #84c4d8 0%, #4b7380 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  cursor: pointer;
+  margin-bottom: 2.125rem;
 }
 
-h1 {
-  font-size: 2rem;
-}
-
-h3 {
-  color: #333333;
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin-right: 2rem;
+.navbar__logout {
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.07rem;
+  cursor: pointer;
+  margin: 0 auto 4rem auto;
 }
 /*# sourceMappingURL=app.css.map */

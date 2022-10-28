@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lato:wght@300;400;700&display=swap');
 
 // Fonts
-$Inter: 'Inter', sans-serif;
-$Lato: 'Lato', sans-serif;
+$inter: 'Inter', sans-serif;
+$lato: 'Lato', sans-serif;
 
 // Colors
+$primary: #1a1818;
 $white: #ffffff;
-$gray: #545454;
-$grayDark: #333333;
+$background: #383838;
 
 // Gradients
-$blueGradient: linear-gradient(180deg, #84c4d8 0%, #4b7380 100%);
+$darkGradient: linear-gradient(162.92deg, #101010 0%, #282525 100%);
 
 //RWD 450px, 800px, 1200px, 1400px
 $breakpoints: (
