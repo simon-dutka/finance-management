@@ -1,13 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lato:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
 
 // Fonts
 $inter: 'Inter', sans-serif;
 $lato: 'Lato', sans-serif;
+$roboto: 'Roboto', sans-serif;
 
 // Colors
 $primary: #1a1818;
 $white: #ffffff;
 $background: #383838;
+$secondary: #1d1c1c;
 
 // Gradients
 $darkGradient: linear-gradient(162.92deg, #101010 0%, #282525 100%);
