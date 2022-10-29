@@ -1,0 +1,39 @@
+.card {
+    &-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+
+        grid-row: 1;
+        width: 100%;
+        height: 100%;
+        padding: 2.5rem 0;
+
+        background: #1d1c1c;
+        border-radius: 1.5625rem;
+
+        &--income {
+            grid-column: 2;
+        }
+
+        &--expense {
+            grid-column: 3;
+        }
+
+        &-text {
+            color: $white;
+            font-size: 1.4375rem;
+            font-weight: 700;
+            letter-spacing: 0.03rem;
+            font-family: $inter;
+        }
+    }
+}
