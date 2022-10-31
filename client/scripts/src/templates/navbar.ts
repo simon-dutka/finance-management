@@ -12,7 +12,9 @@ class NavbarElement extends HTMLElement {
 
                 <navbar class="navbar__container-items">
                     <ul class="navbar__items">
-                        <li class="navbar__item">History</li>
+                        <li class="navbar__item">
+                            <a href="./history/history.html">History</a>
+                        </li>
                         <li class="navbar__item">Transactions</li>
                         <li class="navbar__item">Statistic</li>
                     </ul>

@@ -210,6 +210,12 @@ body {
           flex-direction: column;
 }
 
+.history--large {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1/3;
+}
+
 .history-title {
   color: #ffffff;
   font-size: 23px;

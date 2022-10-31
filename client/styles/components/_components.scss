@@ -1,5 +1,5 @@
-@import './basic/_basic.scss';
+@import './templates/_navbar.scss';
 @import './card/_card.scss';
-@import './history/_history.scss';
-@import './statistics/_statistics.scss';
-@import './transactions/_transactions.scss';
+@import './pages/history/_history.scss';
+@import './pages/statistics/_statistics.scss';
+@import './pages/transactions/_transactions.scss';

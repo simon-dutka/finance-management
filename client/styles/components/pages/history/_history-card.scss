@@ -9,6 +9,10 @@
     border-radius: 1.5625rem;
     flex-direction: column;
 
+    &--large {
+        grid-row: 1/3;
+    }
+
     &-title {
         color: $white;
         font-size: 23px;
