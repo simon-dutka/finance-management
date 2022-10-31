@@ -4,8 +4,9 @@ class NavbarElement extends HTMLElement {
                 <div class="navbar__user-container">
                     <img
                         class="navbar__user-img"
-                        src="../assets/user.svg"
+                        src="/client/assets/user.svg"
                         alt="user image"
+                        
                     />
                     <p class="navbar__username">John Smith</p>
                 </div>
@@ -13,10 +14,17 @@ class NavbarElement extends HTMLElement {
                 <navbar class="navbar__container-items">
                     <ul class="navbar__items">
                         <li class="navbar__item">
-                            <a href="./history/history.html">History</a>
+                            <a href="/client/public/index.html">Home</a>
                         </li>
-                        <li class="navbar__item">Transactions</li>
-                        <li class="navbar__item">Statistic</li>
+                        <li class="navbar__item">
+                            <a href="/client/public/history/history.html">History</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="/client/public/transactions/transactions.html">Transactions</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="/client/public/statistics/statistics.html">Statistic</a>
+                        </li>
                     </ul>
                 </navbar>
 
