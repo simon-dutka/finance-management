@@ -10,26 +10,7 @@
     </head>
 
     <body>
-        <div class="navbar__container">
-            <div class="navbar__user-container">
-                <img
-                    class="navbar__user-img"
-                    src="../assets/user.svg"
-                    alt="user image"
-                />
-                <p class="navbar__username">John Smith</p>
-            </div>
-
-            <navbar class="navbar__container-items">
-                <ul class="navbar__items">
-                    <li class="navbar__item">History</li>
-                    <li class="navbar__item">Transactions</li>
-                    <li class="navbar__item">Statistic</li>
-                </ul>
-            </navbar>
-
-            <p class="navbar__logout">Logout</p>
-        </div>
+        <navbar-element></navbar-element>
 
         <a href="#">
             <div class="card__item card__item--income">
@@ -64,6 +45,9 @@
             </div>
         </section>
 
-        <!-- <script type="module" src="../scripts/dist/App.js"></script> -->
+        <script
+            type="module"
+            src="../scripts/dist/templates/navbar.js"
+        ></script>
     </body>
 </html>
