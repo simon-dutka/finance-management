@@ -33,7 +33,7 @@ body {
     scroll-behavior: smooth;
     background-color: $background;
     display: grid;
-    grid-template-columns: 1.7fr repeat(4, 1fr);
+    grid-template-columns: 350px repeat(4, 1fr);
     grid-template-rows: 1.6fr 2fr;
     column-gap: 60px;
     row-gap: 60px;

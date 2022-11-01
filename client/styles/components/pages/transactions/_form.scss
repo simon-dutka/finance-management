@@ -1,0 +1,68 @@
+.form {
+    &__transactions {
+        grid-row: 1/3;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 24.875rem;
+        height: 85%;
+        background: $secondary;
+        border-radius: 1.5625rem;
+
+        &-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        &-title {
+            color: $white;
+            font-size: 1.3125rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            font-family: $inter;
+
+            margin: 2.1875rem 0;
+        }
+
+        &-btn {
+            color: $primary;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.02rem;
+            font-family: $inter;
+            cursor: pointer;
+
+            align-self: flex-end;
+            background: $white;
+            border-radius: 30px;
+            padding: 0.75rem 1.4rem;
+            margin: 1rem 3rem 0 0;
+        }
+    }
+
+    &__input {
+        color: $primary;
+        font-size: 1rem;
+        font-weight: 500;
+        letter-spacing: 0.02rem;
+        font-family: $lato;
+
+        width: 18.75rem;
+        height: 2.8125rem;
+        border-radius: 0.3125rem;
+        outline: none;
+        background: $white;
+        padding-left: 1rem;
+        margin-bottom: 1.875rem;
+
+        &::placeholder {
+            color: $primary;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.02rem;
+            font-family: $lato;
+        }
+    }
+}
