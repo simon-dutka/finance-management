@@ -25,12 +25,11 @@
         <form class="form__transactions form__transactions--income">
             <p class="form__transactions-title">Income</p>
 
-            <div class="form__transactions-container">
+            <div class="form__transactions-container form-transactions">
                 <input
                     type="text"
                     name="title"
-                    id="income__title-of-transation"
-                    class="form__input"
+                    class="form__input form-title"
                     placeholder="Title of transaction"
                     required
                 />
@@ -38,8 +37,7 @@
                 <input
                     type="number"
                     name="amount"
-                    id="income__amount"
-                    class="form__input"
+                    class="form__input form-amount"
                     placeholder="Enter amount"
                     required
                 />
@@ -47,10 +45,19 @@
                 <input
                     type="text"
                     name="category"
-                    id="income__category"
-                    class="form__input"
+                    class="form__input form-category"
                     list="income-categories"
                     placeholder="Category"
+                    onkeypress="return false"
+                    required
+                />
+
+                <input
+                    type="text"
+                    name="source"
+                    class="form__input form-source"
+                    list="sources"
+                    placeholder="Source"
                     onkeypress="return false"
                     required
                 />
@@ -61,35 +68,23 @@
                     <option value="Other"></option>
                 </datalist>
 
-                <input
-                    type="text"
-                    name="source"
-                    id="income__source"
-                    class="form__input"
-                    list="sources"
-                    placeholder="Source"
-                    onkeypress="return false"
-                    required
-                />
-
                 <datalist id="sources">
                     <option value="Cash"></option>
                     <option value="Card"></option>
                 </datalist>
             </div>
 
-            <button class="form__transactions-btn">Add</button>
+            <p class="form__transactions-btn form-btn">Add</p>
         </form>
 
         <form class="form__transactions form__transactions--expense">
             <p class="form__transactions-title">Expense</p>
 
-            <div class="form__transactions-container">
+            <div class="form__transactions-container form-transactions">
                 <input
                     type="text"
                     name="title"
-                    id="income__title-of-transation"
-                    class="form__input"
+                    class="form__input form-title"
                     placeholder="Title of transaction"
                     required
                 />
@@ -97,8 +92,7 @@
                 <input
                     type="number"
                     name="amount"
-                    id="income__amount"
-                    class="form__input"
+                    class="form__input form-amount"
                     placeholder="Enter amount"
                     required
                 />
@@ -106,10 +100,19 @@
                 <input
                     type="text"
                     name="category"
-                    id="income__category"
-                    class="form__input"
+                    class="form__input form-category"
                     list="income-categories"
                     placeholder="Category"
+                    onkeypress="return false"
+                    required
+                />
+
+                <input
+                    type="text"
+                    name="source"
+                    class="form__input form-source"
+                    list="sources"
+                    placeholder="Source"
                     onkeypress="return false"
                     required
                 />
@@ -120,24 +123,13 @@
                     <option value="Other"></option>
                 </datalist>
 
-                <input
-                    type="text"
-                    name="source"
-                    id="income__source"
-                    class="form__input"
-                    list="sources"
-                    placeholder="Source"
-                    onkeypress="return false"
-                    required
-                />
-
                 <datalist id="sources">
                     <option value="Cash"></option>
                     <option value="Card"></option>
                 </datalist>
             </div>
 
-            <button class="form__transactions-btn">Add</button>
+            <p type="submit" class="form__transactions-btn form-btn">Add</p>
         </form>
 
         <script
