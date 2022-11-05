@@ -1,30 +1,43 @@
 const addTransaction = () => {
-    let formTransactions: any = document.querySelectorAll('.form-transactions');
-    let formBtns = document.querySelectorAll('.form-btn');
+    const formTransactions: any =
+        document.querySelectorAll('.form-transactions');
+    const formBtns = document.querySelectorAll('.form-btn');
 
     formBtns.forEach((element, i) => {
-        // Save transaction values in Local Storage onclick 'Add' button
         element.addEventListener('click', () => {
             const saveTransaction = () => {
-                let transactionValues: string[] = [];
+                let createdTransactions =
+                    localStorage.getItem('allTransactions');
 
-                for (let j = 0; j < 4; j++) {
-                    transactionValues.push(
-                        `elVal-${formTransactions[i].children[j].value} `
-                    );
+                let transactions: {}[];
+                createdTransactions === null
+                    ? (transactions = [])
+                    : (transactions = JSON.parse(createdTransactions));
+
+                // Prototype of transaction object
+                const transactionProto = {
+                    title: 'Title of transaction',
+                    amount: 1,
+                    category: 'Salary',
+                    source: 'Cash',
+                };
+
+                let newTransaction: {} = Object.create(transactionProto);
+
+                // Adding values to transaction object properties
+                let j = 0;
+                for (let property in newTransaction) {
+                    newTransaction[property] =
+                        formTransactions[i].children[j].value;
+                    j++;
                 }
 
-                return transactionValues.toString();
+                transactions.push(newTransaction);
+
+                return JSON.stringify(transactions);
             };
 
-            const createdTransactions = localStorage.getItem('allTransactions');
-
-            createdTransactions === null
-                ? localStorage.setItem('allTransactions', saveTransaction())
-                : localStorage.setItem(
-                      'allTransactions',
-                      saveTransaction() + createdTransactions
-                  );
+            localStorage.setItem('transactions', saveTransaction());
         });
     });
 };
