@@ -1,6 +1,7 @@
-class NavbarElement extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
+const navbarTemplate = () => {
+    class NavbarElement extends HTMLElement {
+        connectedCallback() {
+            this.innerHTML = `
                 <div class="navbar__user-container">
                     <img
                         class="navbar__user-img"
@@ -30,7 +31,9 @@ class NavbarElement extends HTMLElement {
 
                 <p class="navbar__logout">Logout</p>
             `;
-        this.classList.add('navbar__container');
+            this.classList.add('navbar__container');
+        }
     }
-}
-customElements.define('navbar-element', NavbarElement);
+    customElements.define('navbar-element', NavbarElement);
+};
+export { navbarTemplate };

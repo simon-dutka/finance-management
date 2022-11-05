@@ -1,6 +1,7 @@
-class HeadElement extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
+const headTemplate = () => {
+    class HeadElement extends HTMLElement {
+        connectedCallback() {
+            this.innerHTML = `
             <head>
                 <meta charset="UTF-8" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,8 +13,11 @@ class HeadElement extends HTMLElement {
             </head>
             `;
 
-        this.classList.add('navbar__container');
+            this.classList.add('navbar__container');
+        }
     }
-}
 
-customElements.define('head-element', HeadElement);
+    customElements.define('head-element', HeadElement);
+};
+
+export { headTemplate };
