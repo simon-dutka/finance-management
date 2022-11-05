@@ -1,8 +1,8 @@
 import { addTransaction } from './AddTransaction.js';
-import { headTemplate } from '../templates/Head.js';
+import { loader } from '../Loader.js';
 import { navbarTemplate } from '../templates/Navbar.js';
 import { openTransaction } from './openTransaction.js';
 addTransaction();
-headTemplate();
+loader();
 navbarTemplate();
 openTransaction();
