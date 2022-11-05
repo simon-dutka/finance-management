@@ -1,3 +1,4 @@
+import { closeTransactions } from './CloseTransaction.js';
 const addTransaction = () => {
     const formTransactions = document.querySelectorAll('.form-transactions');
     const formBtns = document.querySelectorAll('.form-btn');
@@ -28,6 +29,13 @@ const addTransaction = () => {
                 return JSON.stringify(transactions);
             };
             localStorage.setItem('transactions', saveTransaction());
+            const clearInputs = () => {
+                for (let j = 0; j < 4; j++) {
+                    formTransactions[i].children[j].value = '';
+                }
+            };
+            clearInputs();
+            closeTransactions(i);
         });
     });
 };
