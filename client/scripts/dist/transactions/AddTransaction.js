@@ -4,7 +4,7 @@ const addTransaction = () => {
     formBtns.forEach((element, i) => {
         element.addEventListener('click', () => {
             const saveTransaction = () => {
-                let createdTransactions = localStorage.getItem('allTransactions');
+                let createdTransactions = localStorage.getItem('transactions');
                 let transactions;
                 createdTransactions === null
                     ? (transactions = [])
