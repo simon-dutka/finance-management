@@ -26,6 +26,9 @@ const addTransaction = () => {
                         formTransactions[i].children[j].value;
                     j++;
                 }
+                // Add $ symbol to amount property
+                newTransaction.amount = `${newTransaction.amount}$`;
+                // Add type of transaction
                 i === 0
                     ? (newTransaction.type = 'Income')
                     : (newTransaction.type = 'Expense');
