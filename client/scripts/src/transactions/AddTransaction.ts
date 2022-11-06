@@ -21,9 +21,10 @@ const addTransaction = () => {
                     amount: 1,
                     category: 'Salary',
                     source: 'Cash',
+                    type: 'Income',
                 };
 
-                let newTransaction: {} = Object.create(transactionProto);
+                let newTransaction = Object.create(transactionProto);
 
                 // Adding values to transaction object properties
                 let j = 0;
@@ -32,6 +33,10 @@ const addTransaction = () => {
                         formTransactions[i].children[j].value;
                     j++;
                 }
+
+                i === 0
+                    ? (newTransaction.type = 'Income')
+                    : (newTransaction.type = 'Expense');
 
                 transactions.push(newTransaction);
 
