@@ -36,10 +36,10 @@
             <a href="#"> <p class="card__item-text">Expense</p></a>
         </div>
 
-        <form class="form__transactions form__transactions--income">
+        <div class="form__transactions form__transactions--income">
             <p class="form__transactions-title">Income</p>
 
-            <div class="form__transactions-container form-transactions">
+            <form class="form__transactions-container form-transactions">
                 <input
                     type="text"
                     name="title"
@@ -86,15 +86,17 @@
                     <option value="Cash"></option>
                     <option value="Card"></option>
                 </datalist>
-            </div>
 
-            <p class="form__transactions-btn form-btn">Add</p>
-        </form>
+                <button type="submit" class="form__transactions-btn form-btn">
+                    Add
+                </button>
+            </form>
+        </div>
 
-        <form class="form__transactions form__transactions--expense">
+        <div class="form__transactions form__transactions--expense">
             <p class="form__transactions-title">Expense</p>
 
-            <div class="form__transactions-container form-transactions">
+            <form class="form__transactions-container form-transactions">
                 <input
                     type="text"
                     name="title"
@@ -144,10 +146,12 @@
                     <option value="Cash"></option>
                     <option value="Card"></option>
                 </datalist>
-            </div>
 
-            <p type="submit" class="form__transactions-btn form-btn">Add</p>
-        </form>
+                <button type="submit" class="form__transactions-btn form-btn">
+                    Add
+                </button>
+            </form>
+        </div>
 
         <script
             type="module"
