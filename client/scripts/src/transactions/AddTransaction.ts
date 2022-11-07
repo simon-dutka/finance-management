@@ -47,16 +47,25 @@ const addTransaction = () => {
                 return JSON.stringify(transactions);
             };
 
-            localStorage.setItem('transactions', saveTransaction());
-
             const clearInputs = () => {
                 for (let j = 0; j < 4; j++) {
                     formTransactions[i].children[j].value = '';
                 }
             };
 
-            clearInputs();
-            closeTransactions(i);
+            // Checking if password length is < 100
+            if (formTransactions[i].children[0].value.length <= 100) {
+                // Checking if amount length is < 7
+                if (formTransactions[i].children[1].value.length <= 7) {
+                    localStorage.setItem('transactions', saveTransaction());
+                    clearInputs();
+                    closeTransactions(i);
+                } else {
+                    alert('Amount must be shorter than 7 digits');
+                }
+            } else {
+                alert('Password must be shorter than 100 letters');
+            }
         });
     });
 };
