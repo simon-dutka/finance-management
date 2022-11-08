@@ -288,8 +288,8 @@ body {
 .history__item-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2fr 1.3fr 1fr 1fr 1fr;
-      grid-template-columns: 2fr 1.3fr 1fr 1fr 1fr;
+  -ms-grid-columns: 2fr 1.3fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 2fr 1.3fr 1fr 1fr 1fr 1fr;
   width: 90%;
   text-align: center;
   margin: 1.5rem auto 0 auto;
