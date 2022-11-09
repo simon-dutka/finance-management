@@ -295,6 +295,45 @@ body {
   margin: 1.5rem auto 0 auto;
 }
 
+.history-config {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.5fr 2fr;
+      grid-template-columns: 1.5fr 2fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  margin: 1rem auto 2rem auto;
+}
+
+.history-config__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.history-config__title {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+}
+
+.history-config__input {
+  color: #1a1818;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02rem;
+  font-family: "Lato", sans-serif;
+  width: 15rem;
+  height: 2.5rem;
+  border-radius: 0.3125rem;
+  outline: none;
+  background: #ffffff;
+  padding-left: 1rem;
+}
+
 .form__transactions {
   display: none;
   width: 24.875rem;

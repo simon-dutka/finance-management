@@ -1,0 +1,35 @@
+.history {
+    &-config {
+        display: grid;
+        grid-template-columns: 1.5fr 2fr;
+        align-items: center;
+        width: 90%;
+        margin: 1rem auto 2rem auto;
+
+        &__container {
+            display: flex;
+        }
+
+        &__title {
+            color: $white;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: $inter;
+        }
+
+        &__input {
+            color: $primary;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.02rem;
+            font-family: $lato;
+
+            width: 15rem;
+            height: 2.5rem;
+            border-radius: 0.3125rem;
+            outline: none;
+            background: $white;
+            padding-left: 1rem;
+        }
+    }
+}

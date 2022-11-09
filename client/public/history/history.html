@@ -21,6 +21,44 @@
         <section class="history history--large">
             <p class="history-title">History</p>
 
+            <div class="history-config">
+                <div class="history-config__container">
+                    <input
+                        type="text"
+                        name="category"
+                        id="sort-list-container"
+                        class="history-config__input"
+                        list="sort-list"
+                        placeholder="Sort"
+                        onkeypress="return false"
+                        required
+                    />
+
+                    <datalist id="sort-list">
+                        <option
+                            class="sort-option"
+                            value="Low to high"
+                        ></option>
+                        <option
+                            class="sort-option"
+                            value="High to low"
+                        ></option>
+                        <option
+                            class="sort-option"
+                            value="Newest first"
+                        ></option>
+                        <option
+                            class="sort-option"
+                            value="Oldest first"
+                        ></option>
+                    </datalist>
+                </div>
+
+                <div class="history-config__container">
+                    <p class="history-config__title">Filtrownie</p>
+                </div>
+            </div>
+
             <div id="history-container" class="history-container"></div>
         </section>
 
