@@ -24,7 +24,7 @@ const addTransaction = () => {
                         category: 'Salary',
                         source: 'Cash',
                         type: 'Income',
-                        date: '1/1/2022',
+                        date: '2022-1-1',
                     };
 
                     let newTransaction = Object.create(transactionProto);
@@ -47,9 +47,9 @@ const addTransaction = () => {
 
                     let currentDate = new Date();
 
-                    newTransaction.date = `${
+                    newTransaction.date = `${currentDate.getFullYear()}-${
                         currentDate.getMonth() + 1
-                    }/${currentDate.getDate()}/${currentDate.getFullYear()}`;
+                    }-${currentDate.getDate()}`;
 
                     transactions.push(newTransaction);
 
