@@ -10,40 +10,44 @@ const sortTransactions = () => {
             date: '1/1/2022',
             id: 0,
         };
+        // Push elements to correct arrays
+        const pushElementsToArrays = (arr, transactionProto, propertyNum) => {
+            for (let i = 0; i < historyContainerEl.children.length; i++) {
+                let transactionToSort = Object.create(transactionProto);
+                let el = historyContainerEl.children[i].children[propertyNum]
+                    .innerHTML;
+                propertyNum === 1
+                    ? (transactionToSort.amount = Number(el.replace(/\$/g, '')))
+                    : (transactionToSort.date = el);
+                transactionToSort.id = i;
+                arr.push(transactionToSort);
+            }
+        };
         // Render transactions after use sort
         const renderTransactions = (arr) => {
             let sortedArr = [];
-            for (let i = 0; i < arr.length; i++) {
+            arr.forEach((el, i) => {
                 sortedArr.push(historyContainerEl.children[arr[i].id]);
-            }
+            });
             historyContainerEl.replaceChildren();
-            for (let i = 0; i < arr.length; i++) {
+            arr.forEach((el, i) => {
                 historyContainerEl.appendChild(sortedArr[i]);
-            }
+            });
         };
         const sortByAmount = () => {
             let lowToHigh = [];
             let highToLow = [];
-            // Push elements to correct arrays for sort by amount
-            const pushElementsToArrays = (arr) => {
-                for (let i = 0; i < historyContainerEl.children.length; i++) {
-                    let transactionToSort = Object.create(transactionAmountProto);
-                    transactionToSort.amount = Number(historyContainerEl.children[i].children[1].innerHTML.replace(/\$/g, ''));
-                    transactionToSort.id = i;
-                    arr.push(transactionToSort);
-                }
-            };
             // Sort items in an array
             const sortItemsByAmount = (arr) => {
                 arr.sort((a, b) => a.amount - b.amount);
             };
             if (this.value === 'Low to high') {
-                pushElementsToArrays(lowToHigh);
+                pushElementsToArrays(lowToHigh, transactionAmountProto, 1);
                 sortItemsByAmount(lowToHigh);
                 renderTransactions(lowToHigh);
             }
             else {
-                pushElementsToArrays(highToLow);
+                pushElementsToArrays(highToLow, transactionAmountProto, 1);
                 sortItemsByAmount(highToLow);
                 highToLow = highToLow.reverse();
                 renderTransactions(highToLow);
@@ -52,31 +56,24 @@ const sortTransactions = () => {
         const sortByDate = () => {
             let newestFirst = [];
             let oldestFirst = [];
-            const pushElementsToArrays = (arr) => {
-                for (let i = 0; i < historyContainerEl.children.length; i++) {
-                    let transactionToSort = Object.create(transactionDateProto);
-                    transactionToSort.date =
-                        historyContainerEl.children[i].children[5].innerHTML;
-                    transactionToSort.id = i;
-                    arr.push(transactionToSort);
-                }
-            };
             const sortItemsByDate = (arr) => {
-                arr.sort((a, b) => new Date(a.date).getTime() > new Date(b.date).getTime()
+                arr.sort((a, b) => new Date(a.date).getTime() < new Date(b.date).getTime()
                     ? 1
                     : -1);
             };
             if (this.value === 'Newest first') {
-                pushElementsToArrays(newestFirst);
+                pushElementsToArrays(newestFirst, transactionDateProto, 5);
                 sortItemsByDate(newestFirst);
                 renderTransactions(newestFirst);
             }
             else {
-                pushElementsToArrays(oldestFirst);
+                pushElementsToArrays(oldestFirst, transactionDateProto, 5);
                 sortItemsByDate(oldestFirst);
+                oldestFirst = oldestFirst.reverse();
                 renderTransactions(oldestFirst);
             }
         };
+        //! Onclick high to low and next newest first return incorrect sequence
         this.value === 'Low to high' || this.value === 'High to low'
             ? sortByAmount()
             : sortByDate();
