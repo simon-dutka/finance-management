@@ -51,6 +51,7 @@ const sortTransactions = () => {
         };
         const sortByDate = () => {
             let newestFirst = [];
+            let oldestFirst = [];
             const pushElementsToArrays = (arr) => {
                 for (let i = 0; i < historyContainerEl.children.length; i++) {
                     let transactionToSort = Object.create(transactionDateProto);
@@ -61,7 +62,7 @@ const sortTransactions = () => {
                 }
             };
             const sortItemsByDate = (arr) => {
-                arr.sort((a, b) => new Date(a.date).getTime() < new Date(b.date).getTime()
+                arr.sort((a, b) => new Date(a.date).getTime() > new Date(b.date).getTime()
                     ? 1
                     : -1);
             };
@@ -69,6 +70,11 @@ const sortTransactions = () => {
                 pushElementsToArrays(newestFirst);
                 sortItemsByDate(newestFirst);
                 renderTransactions(newestFirst);
+            }
+            else {
+                pushElementsToArrays(oldestFirst);
+                sortItemsByDate(oldestFirst);
+                renderTransactions(oldestFirst);
             }
         };
         this.value === 'Low to high' || this.value === 'High to low'
