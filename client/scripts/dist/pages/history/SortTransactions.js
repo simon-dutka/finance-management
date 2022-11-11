@@ -1,6 +1,16 @@
 const sortTransactions = () => {
     let historyContainerEl = document.getElementById('history-container');
     let sortListContainer = document.getElementById('sort-list-container');
+    window.addEventListener('load', () => {
+        const getStartTransactions = () => {
+            let startTransactions = '';
+            for (let i = 0; i < historyContainerEl.children.length; i++) {
+                startTransactions += historyContainerEl.children[i].outerHTML;
+            }
+            return startTransactions;
+        };
+        localStorage.setItem('startTransactions', getStartTransactions());
+    });
     sortListContainer.addEventListener('change', function () {
         const transactionAmountProto = {
             amount: 1,
@@ -10,6 +20,8 @@ const sortTransactions = () => {
             date: '1/1/2022',
             id: 0,
         };
+        historyContainerEl.innerHTML =
+            localStorage.getItem('startTransactions');
         // Push elements to correct arrays
         const pushElementsToArrays = (arr, transactionProto, propertyNum) => {
             for (let i = 0; i < historyContainerEl.children.length; i++) {
@@ -73,10 +85,15 @@ const sortTransactions = () => {
                 renderTransactions(oldestFirst);
             }
         };
-        //! Onclick high to low and next newest first return incorrect sequence
         this.value === 'Low to high' || this.value === 'High to low'
             ? sortByAmount()
             : sortByDate();
+        sortListContainer.addEventListener('click', function () {
+            if (this.value != '') {
+                this.blur();
+                this.value = '';
+            }
+        });
     });
 };
 export { sortTransactions };
