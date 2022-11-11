@@ -7,7 +7,7 @@ const addTransaction = () => {
 
     formBtns.forEach((element, i) => {
         element.addEventListener('click', () => {
-            if (formTransactions[0].checkValidity() === true) {
+            if (formTransactions[i].checkValidity() === true) {
                 const saveTransaction = () => {
                     let createdTransactions =
                         localStorage.getItem('transactions');
@@ -66,7 +66,7 @@ const addTransaction = () => {
                         alert('Amount must be shorter than 7 digits');
                     }
                 } else {
-                    alert('Password must be shorter than 100 letters');
+                    alert('Title must be shorter than 100 letters');
                 }
             }
         });
