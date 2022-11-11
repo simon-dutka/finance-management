@@ -1,7 +1,7 @@
-const renderTransactions = () => {
+const renderTransactions = (transactions) => {
     const historyContainer = document.querySelector('.history-container');
     if (localStorage.getItem('transactions') !== null) {
-        let createdTransactions = JSON.parse(localStorage.getItem('transactions'));
+        let createdTransactions = transactions;
         for (let transaction of createdTransactions) {
             let historyItemContainer = document.createElement('div');
             historyItemContainer.classList.add('history__item-container');
