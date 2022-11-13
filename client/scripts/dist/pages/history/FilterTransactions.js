@@ -2,27 +2,38 @@ import { renderTransactions } from '../../transactionsManagement/RenderTransacti
 const filterTransactions = () => {
     const checkboxes = document.querySelectorAll('.checkbox');
     const historyContainer = document.getElementById('history-container');
-    let createdTransactions = JSON.parse(localStorage.getItem('transactions'));
+    let filters = ['Income', 'Expense'];
     checkboxes.forEach((element, i) => {
         element.addEventListener('change', () => {
-            if (element.checked) {
-                //* Income transactions
-                if (element.name === 'income') {
-                    createdTransactions.forEach((element) => {
-                        if (element.type !== 'Income') {
-                            createdTransactions = createdTransactions.filter((item) => {
-                                return item !== element;
-                            });
-                        }
-                    });
-                    historyContainer.replaceChildren();
-                    renderTransactions(createdTransactions);
-                }
-            }
-            else {
+            let createdTransactions = JSON.parse(localStorage.getItem('transactions'));
+            const filterItems = () => {
                 historyContainer.replaceChildren();
-                renderTransactions(JSON.parse(localStorage.getItem('transactions')));
-            }
+                if (filters.length !== 2) {
+                    createdTransactions = createdTransactions.filter((filter) => filters.includes(filter.type) === false);
+                }
+                renderTransactions(createdTransactions);
+            };
+            const clickFilter = (filterNum, filterName) => {
+                if (i === filterNum) {
+                    filters.includes(filterName)
+                        ? (filters = filters.filter((filter) => filter !== filterName))
+                        : filters.push(filterName);
+                }
+            };
+            let filtersCheckboxes = [
+                {
+                    filterNum: 0,
+                    filterName: 'Income',
+                },
+                {
+                    filterNum: 1,
+                    filterName: 'Expense',
+                },
+            ];
+            filtersCheckboxes.forEach((element) => {
+                clickFilter(element.filterNum, element.filterName);
+            });
+            filterItems();
         });
     });
 };
